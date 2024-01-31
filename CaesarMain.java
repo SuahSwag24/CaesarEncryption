@@ -94,7 +94,7 @@ class CaesarMain
         }
 
         //ENCRYPTION PROCESS
-        String messageString = "EGANYAPHONGEE";
+        String messageString = "SUAHLIJEARICHIE";
         String encrypted = "";
 
         int[] c = new int[50];
@@ -116,7 +116,33 @@ class CaesarMain
 
         encrypted = String.valueOf(d);
         
-        System.out.println("\n" + encrypted);
+        System.out.println("\nEncrypted message: " + encrypted);
+
+        //DECRYPTION with only key and encrypted variables
+        String decrypted;
+
+        int[] e = new int[50];
+        char[] f = new char[50];
+
+        for(int i = 0 ; i < messageString.length() ; i++)
+        {
+            e[i] = (int) encrypted.charAt(i);
+        }
+
+        for(int i = 0 ; i < messageString.length() ; i++)
+        {
+            for(int j = 0 ; j <= 25 ; j++)
+            {
+                if(e[i] == (key[j]))
+                {
+                    f[i] = (char) (j + 65);
+                }
+            }
+        }
+
+        decrypted = String.valueOf(f);
+
+        System.out.println("\nDecrypted message: " + decrypted);
         
     }
 }
