@@ -93,6 +93,30 @@ class CaesarMain
             System.out.print((char) key[k] + ". ");
         }
 
+        //ENCRYPTION PROCESS
+        String messageString = "EGANYAPHONGEE";
+        String encrypted = "";
 
+        int[] c = new int[50];
+        char[] d = new char[50];
+
+        //0 - 26 is alphabetic
+
+        for(int i = 0 ; i < messageString.length() ; i++)
+        {
+            c[i] = (int) messageString.charAt(i);
+        }
+
+        //x - 65 + 1 = Location of each ASCII code
+        for(int i = 0 ; i < messageString.length() ; i++) //Cycles all letters in the string
+        {
+            int j = c[i] - 65;
+            d[i] = (char) key[j];
+        }
+
+        encrypted = String.valueOf(d);
+        
+        System.out.println("\n" + encrypted);
+        
     }
 }
